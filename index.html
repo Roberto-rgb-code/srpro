@@ -8,6 +8,31 @@
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SR Digital Pro ofrece soluciones tecnológicas integrales en Guadalajara, Jalisco. Servicios de desarrollo de software, reparaciones, cableado estructural, venta de equipos y más.">
+    <meta name="keywords" content="soluciones tecnológicas, desarrollo de software, reparaciones de equipos, cableado estructural, venta de equipos, servicios en la nube, Guadalajara, Jalisco">
+    <meta name="author" content="SR Digital Pro">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="SR Digital Pro - Soluciones Tecnológicas">
+    <meta property="og:description" content="Soluciones tecnológicas avanzadas en Guadalajara, Jalisco. Desde desarrollo de software hasta reparaciones y servicios en la nube.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.srdigitalpro.com">
+    <meta property="og:image" content="https://www.srdigitalpro.com/favicon.jpg">
+    <meta property="og:locale" content="es_MX">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SR Digital Pro - Soluciones Tecnológicas">
+    <meta name="twitter:description" content="Soluciones tecnológicas avanzadas en Guadalajara, Jalisco. Desde desarrollo de software hasta reparaciones y servicios en la nube.">
+    <meta name="twitter:image" content="https://www.srdigitalpro.com/favicon.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.srdigitalpro.com">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
     
@@ -1354,7 +1379,7 @@
                         
                         // Ajustar escala y posición inicial
                         computer.scale.set(1, 1, 1); // Reduje la escala para evitar recortes
-                        computer.position.set(0, 0, 0);
+                        computer.position.set(0, -1, 0); // Ajuste de posición para mejor visibilidad
                         
                         scene.add(computer);
                     },
@@ -1484,7 +1509,7 @@
             computer.add(keyboard);
             
             // Posición inicial
-            computer.position.set(0, 0, 0);
+            computer.position.set(0, -1, 0); // Ajuste de posición para mejor visibilidad
             computer.scale.set(1.2, 1.2, 1.2);
             
             scene.add(computer);
