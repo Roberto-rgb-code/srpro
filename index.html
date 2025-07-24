@@ -1206,7 +1206,7 @@
                     <textarea id="message" name="message" rows="5" placeholder="ESCRIBA_SU_MENSAJE" required></textarea>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">ENVIAR_MENSAJE</button>
+                <button type="submit" class="btn btn-primary" onclick="sendWhatsAppMessage(event)">ENVIAR_MENSAJE</button>
             </form>
             
             <div class="contact-info">
@@ -1214,17 +1214,17 @@
                 
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Guadalajara, Jalisco, México</span>
+                    <span><a href="https://maps.app.goo.gl/1cYh1HLzDaAHAzHA6?g_st=iwb" target="_blank">Calle San Gabriel 3110, Col. Vallarta Sur, CP 44500, Guadalajara, Jalisco</a></span>
                 </div>
                 
                 <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+52 (33) 1234-5678</span>
+                    <i class="fab fa-whatsapp"></i>
+                    <span><a href="https://wa.me/523313652284" target="_blank">+52 3313652284</a></span>
                 </div>
                 
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>system@srdigitalpro.com</span>
+                    <span><a href="mailto:info@srdigitalpro.com">info@srdigitalpro.com</a></span>
                 </div>
                 
                 <div class="social-links">
@@ -1608,22 +1608,30 @@
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
+        // WhatsApp Message Function
+        function sendWhatsAppMessage(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const phoneNumber = '523313652284';
+            const whatsappMessage = `Hola, mi nombre es ${name}, mi correo es ${email}. Asunto: ${subject}\nMensaje: ${message}`;
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+
             // Show notification
             const notification = document.getElementById('notification');
             notification.classList.add('show');
             
             // Reset form
-            this.reset();
+            document.getElementById('contactForm').reset();
             
             // Hide notification after 3 seconds
             setTimeout(() => {
                 notification.classList.remove('show');
             }, 3000);
-        });
+        }
 
         // Intersection Observer for fade-in animations
         const observerOptions = {
