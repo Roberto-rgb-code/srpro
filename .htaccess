@@ -1,0 +1,10 @@
+# Activar la reescritura de URLs
+RewriteEngine On
+
+# Redireccionar dominio sin www a www
+RewriteCond %{HTTP_HOST} ^srdigitalpro\.com$ [NC]
+RewriteRule ^(.*)$ https://www.srdigitalpro.com/$1 [L,R=301]
+
+# Opcional: Forzar HTTPS (si tienes certificado SSL)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
