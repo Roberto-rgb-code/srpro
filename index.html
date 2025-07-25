@@ -335,6 +335,33 @@
             cursor: grabbing;
         }
 
+        /* Logo Hero */
+        .hero-logo {
+            position: absolute;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--red);
+            box-shadow: 0 0 30px rgba(255, 0, 64, 0.7);
+            z-index: 50;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+
         /* CPU Stats Panel */
         .cpu-stats {
             position: absolute;
@@ -873,6 +900,11 @@
                 padding: 20px;
             }
 
+            .hero-logo {
+                width: 150px;
+                height: 150px;
+            }
+
             .hero-content {
                 max-width: calc(100% - 430px);
             }
@@ -913,6 +945,11 @@
 
             .cpu-stats {
                 display: none;
+            }
+
+            .hero-logo {
+                width: 120px;
+                height: 120px;
             }
 
             .hero-content {
@@ -995,6 +1032,11 @@
                 <a href="#services" class="btn btn-primary">EXPLORAR SERVICIOS</a>
                 <a href="#contact" class="btn btn-secondary">INICIAR PROYECTO</a>
             </div>
+        </div>
+        
+        <!-- Logo Hero -->
+        <div class="hero-logo">
+            <img src="logosr.jpg" alt="SR Digital Pro Logo">
         </div>
         
         <!-- Panel de estadísticas CPU dentro del hero -->
